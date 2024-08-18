@@ -1,4 +1,5 @@
 import { forwardRef } from "react";
+import { twMerge } from "tailwind-merge";
 
 interface ButtonProps
     extends React.ButtonHTMLAttributes<HTMLButtonElement> { }
@@ -11,14 +12,10 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
     type = "button",
     ...props
 }, ref) => {
-    function twmerge(arg0: string, className: string | undefined): string | undefined {
-        throw new Error("Function not implemented.");
-    }
-
     return (
         <button
             type={type}
-            className={twmerge(`
+            className={twMerge(`
             w-full
             rounded-full
             bg-green-500
